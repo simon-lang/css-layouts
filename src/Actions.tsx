@@ -6,24 +6,28 @@ import {
   HandRaisedIcon
 } from '@heroicons/react/24/solid'
 
+const Button = (props: React.HTMLAttributes<HTMLButtonElement>) => (
+  <button className="flex flex-col items-center cursor-pointer hover:opacity-80">{props.children}</button>
+)
+
 export function Actions() {
   return (
     <div className="flex justify-evenly w-96 text-sm opacity-50 gap-4 py-4">
-      <div className="flex flex-col items-center">
+      <Button>
         <AdjustmentsHorizontalIcon className="w-8" /> Adjustments
-      </div>
-      <div className="flex flex-col items-center">
+      </Button>
+      <Button>
         <ArrowsPointingOutIcon className="w-8" /> Expand
-      </div>
-      <div className="flex flex-col items-center">
+      </Button>
+      <Button>
         <PencilIcon className="w-8" /> Annotations
-      </div>
-      <div className="flex flex-col items-center">
+      </Button>
+      <Button>
         <HandRaisedIcon className="w-8" /> Rotate
-      </div>
-      <div className="flex flex-col items-center">
+      </Button>
+      <Button>
         <LockClosedIcon className="w-8" /> Synched
-      </div>
+      </Button>
     </div>
   )
 }
