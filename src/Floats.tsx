@@ -1,4 +1,5 @@
 import { Heading } from './Heading'
+import { Nav } from './Nav'
 import { Slide } from './Slide'
 
 // <Box style={{ float: 'right' }} className="h-screen bg-slate-900 w-36" />
@@ -17,8 +18,7 @@ export const Floats = () => (
       consectetur, adipisicing elit. Velit sed iste inventore, quam ullam cumque incidunt error placeat aperiam eius
       culpa iure nulla reprehenderit quos natus facilis dolores esse? Laboriosam?
     </p>
-    <a href="#flex" className="px-4">
-      Next
-    </a>
+
+    <Nav prev="position" next="flex" />
   </Slide>
 )

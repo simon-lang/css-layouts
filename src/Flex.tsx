@@ -1,5 +1,6 @@
 import { Box } from './Box'
 import { Heading } from './Heading'
+import { Nav } from './Nav'
 import { Slide } from './Slide'
 
 // https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
@@ -10,17 +11,11 @@ import { Slide } from './Slide'
 export const Flex = () => (
   <Slide id="flex">
     <Heading>Flexbox</Heading>
-    <div className="flex">
+    <div className="p-4 flex justify-items-stretch">
       <Box n={1} />
-      <Box n={2} />
-      <Box n={3} />
+      <Box n={2} className="basis-10/12" />
       <Box n={4} />
     </div>
-    <a href="#floats" className="px-4 absolute bottom-8 left-4">
-      Back
-    </a>
-    <a href="#grid" className="px-4 absolute bottom-8 right-8">
-      Next
-    </a>
+    <Nav prev="floats" next="grid" />
   </Slide>
 )

@@ -1,26 +1,32 @@
 // import { Box } from './Box'
 import { Heading } from './Heading'
+import { Nav } from './Nav'
 import { Slide } from './Slide'
 
-export const Box = ({ children }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className="text-2xl m-4">{children}</div>
-)
+export const Box = ({ children }: React.HTMLAttributes<HTMLDivElement>) => <div className="">{children}</div>
 
 export function Outline() {
   return (
     <Slide id="outline">
       <Heading>Outline</Heading>
-      <Box>Intro: Why understand CSS layouts? Rationale and disclaimers</Box>
-      <Box>Refresher: Bootstrap Utility Classes & Grid</Box>
-      <Box>Refresher: Floats, Position, Flexbox, CSS Grid</Box>
-      <Box>Demo: creating DM page layouts with Tailwind</Box>
-      <Box>Bonus if time: Look around the ecosystem. headlessui, twin.macro, etc </Box>
-      <a href="#" className="px-4 absolute bottom-8 left-4">
-        Back
-      </a>
-      <a href="#floats" className="px-4 absolute bottom-8 right-8">
-        Next
-      </a>
+      <div className="text-2xl xl:text-3xl flex flex-col p-4 gap-4">
+        <Box>
+          <strong className="w-40 inline-block">Intro</strong> Why understand CSS layouts?
+        </Box>
+        <Box>
+          <strong className="w-40 inline-block">Refresher</strong> Bootstrap utility classes & grid
+        </Box>
+        <Box>
+          <strong className="w-40 inline-block">Refresher</strong> Floats, Position, Flexbox, CSS Grid
+        </Box>
+        <Box>
+          <strong className="w-40 inline-block">Demo</strong> Creating DM page layouts with Tailwind
+        </Box>
+        <Box>
+          <strong className="w-40 inline-block">Bonus</strong> Look around the Tailwind ecosystem
+        </Box>
+      </div>
+      <Nav prev="" next="intro" />
     </Slide>
   )
 }
