@@ -22,19 +22,16 @@ const Workspace = () => {
     <div className="h-screen grow overflow-hidden xopacity-0">
       <Actions></Actions>
       <div className="grid grid-cols-2 gap-4">
-        {range(count).map(() => (
-          <WorkspaceItem />
-        ))}
+        {range(count).map((n) => {
+          const src = n % 2 === 0 ? 'eye.jpg' : 'eye2.jpg'
+          return <WorkspaceItem src={src} />
+        })}
       </div>
     </div>
   )
 }
 
-export const WorkspaceItem = () => {
-  const { decrement } = useDemoStore()
-  return (
-    <div className="bg-black h-full w-full relative">
-export const WorkspaceItem = ({ src }: { src: string }) => {
+const WorkspaceItem = ({ src }: { src: string }) => {
   const { decrement, rotate, flip } = useDemoStore()
   return (
     <div className="bg-black h-full w-full relative overflow-hidden flex justify-center">
