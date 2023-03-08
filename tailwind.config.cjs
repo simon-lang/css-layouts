@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       colors: {
         primary: '#076fcb',
-        darkblue: '#1f2f40',
-        brand: '#1f9cac',
+        darkblue: '#0f1318', // DM BG: #0f1318
+        brand: '#1f2532',    // DM Sidebar: #1f2532
         success: '#5eb623'
       }
     },

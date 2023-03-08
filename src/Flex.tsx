@@ -14,6 +14,7 @@ export const Flex = () => (
     <div className="p-4 flex justify-items-stretch">
       <Box n={1} />
       <Box n={2} className="basis-10/12" />
+      <Box n={3} />
       <Box n={4} />
     </div>
     <Nav prev="floats" next="grid" />
