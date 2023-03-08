@@ -6,9 +6,10 @@ import { useDemoStore } from './store'
 export const Thumbnail = () => <div className="bg-darkblue h-24 cursor-pointer hover:bg-opacity-50"></div>
 
 export function Demo() {
+  const { sidebarOpen } = useDemoStore()
   return (
     <div id="demo" className="h-screen bg-darkblue text-lg flex">
-      <Sidebar />
+      {sidebarOpen && <Sidebar />}
       <SidebarHandle />
       <Workspace />
     </div>
@@ -33,8 +34,12 @@ export const WorkspaceItem = () => {
   const { decrement } = useDemoStore()
   return (
     <div className="bg-black h-full w-full relative">
+export const WorkspaceItem = ({ src }: { src: string }) => {
+  const { decrement, rotate, flip } = useDemoStore()
+  return (
+    <div className="bg-black h-full w-full relative overflow-hidden flex justify-center">
       <XMarkIcon className="w-8 cursor-pointer absolute top-2 right-2" onClick={decrement} />
-      <img src="eye.jpg" />
+      <img src={src} className={`${flip && '-scale-x-100'} ${rotate && 'rotate-90'}`} />
     </div>
   )
 }
@@ -47,13 +52,16 @@ const Sidebar = () => (
   </div>
 )
 
-const SidebarHandle = () => (
-  <div className="h-screen flex items-center">
-    <div className="bg-brand p-2 py-4 rounded-tr rounded-br cursor-pointer">
-      <ChevronLeftIcon className="w-5" />
+const SidebarHandle = () => {
+  const { sidebarOpen, toggleSidebar } = useDemoStore()
+  return (
+    <div className="h-screen flex items-center">
+      <div className="-ml-1 mr-2 bg-brand p-2 py-4 rounded-tr rounded-br cursor-pointer" onClick={toggleSidebar}>
+        {sidebarOpen ? <ChevronLeftIcon className="w-5" /> : <ChevronRightIcon className="w-5" />}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const SidebarHeader = () => (
   <div className="flex mb-8">
