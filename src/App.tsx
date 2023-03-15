@@ -8,6 +8,7 @@ import { Outline } from './Outline'
 import { Position } from './Position'
 import { Slide } from './Slide'
 import { Title } from './Title'
+import './keyboard'
 
 function App() {
   return (
