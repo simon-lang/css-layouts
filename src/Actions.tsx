@@ -20,25 +20,25 @@ export function Actions() {
   return (
     <div className="flex text-sm text-gray-400 gap-4 py-4">
       <Button>
-        <AdjustmentsHorizontalIcon className="w-8" /> Adjustments
+        <AdjustmentsHorizontalIcon className="w-8" />
       </Button>
       <Button onClick={expand}>
-        <ArrowsPointingOutIcon className="w-8" /> Expand
+        <ArrowsPointingOutIcon className="w-8" />
       </Button>
       <Button onClick={toggleFlip}>
-        <ArrowPathRoundedSquareIcon className="w-8" /> Flip
+        <ArrowPathRoundedSquareIcon className="w-8" />
       </Button>
       <Button onClick={toggleZoom}>
-        <HandRaisedIcon className={`w-8 ${zoom && 'text-sky-400'}`} /> Pan/Zoom
+        <HandRaisedIcon className={`w-8 ${zoom && 'text-sky-400'}`} />
       </Button>
       <Button>
-        <PencilIcon className="w-8" /> Annotations
+        <PencilIcon className="w-8" />
       </Button>
       <Button onClick={toggleRotate}>
-        <ArrowPathIcon className="w-8" /> Rotate
+        <ArrowPathIcon className="w-8" />
       </Button>
       <Button>
-        <LockClosedIcon className="w-8" /> Synched
+        <LockClosedIcon className="w-8" />
       </Button>
     </div>
   )

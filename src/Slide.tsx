@@ -8,7 +8,7 @@ const bg: Record<string, string> = {
 }
 
 export const Slide = ({ id, children }: any) => (
-  <div id={id} className={`h-screen relative ${bg[id] ? bg[id] : ''}`}>
+  <div id={id} className={`w-screen h-screen relative ${bg[id] ? bg[id] : 'bg-darkblue'}`}>
     {children}
   </div>
 )

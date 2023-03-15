@@ -9,7 +9,7 @@ export function Box({ style, className, n, children }: BoxProps & React.HTMLAttr
       style={{
         ...style
       }}
-      className={`py-2 px-4 border-2 border-zinc-500 text-zinc-200 text-4xl text-center ${className}`}
+      className={`py-2 px-4 bg-black bg-opacity-20 text-zinc-200 text-4xl text-center ${className}`}
     >
       {n || children || 'x'}
     </div>

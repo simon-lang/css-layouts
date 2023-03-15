@@ -2,7 +2,15 @@
 import { Heading } from './Heading'
 import { Nav } from './Nav'
 import { Slide } from './Slide'
-import { AcademicCapIcon, HeartIcon, HandThumbDownIcon, StarIcon, HandRaisedIcon } from '@heroicons/react/24/solid'
+import {
+  AcademicCapIcon,
+  HeartIcon,
+  HandThumbDownIcon,
+  StarIcon,
+  HandRaisedIcon,
+  UsersIcon,
+  QuestionMarkCircleIcon
+} from '@heroicons/react/24/solid'
 
 export const Box = ({ children }: React.HTMLAttributes<HTMLDivElement>) => (
   <div className="flex m-4 text-2xl">{children}</div>
@@ -24,17 +32,28 @@ export function Intro() {
         <HeartIcon className="basis-9 mr-5" />
         Fun
       </Box>
+      <Heading>Disclaimers</Heading>
       <Box>
-        <HandRaisedIcon className="basis-9 mr-5" />
-        Not a sales pitch for Tailwind
-        <a href="https://tailwindcss.com/" className="ml-2 cursor-pointer">
-          {' '}
-          (quote)
+        <UsersIcon className="basis-9 mr-5" />
+        Intended Audience
+        {
+          // - Familiar with CSS and Box Model
+          // - Familiar with Bootstrap's Grid and benefits of Utility Classes
+          // - Somewhat familiar with how to layout items on a page but always need to have docs open to figure out esoteric flexbox properties
+          // - Understand easy way to experiment with these properties and very quickly see their results
+        }
+      </Box>
+      <Box>
+        <QuestionMarkCircleIcon className="basis-9 mr-5" />
+        <a href="https://tailwindcss.com/" className="cursor-pointer">
+          Why Tailwind
         </a>
+        ?
       </Box>
       <Box>
         <HandThumbDownIcon className="basis-9 mr-5" />
         I'm no expert
+        <span className="hidden">Goal is to show you a way that works for me and I enjoy</span>
       </Box>
       <Nav prev="outline" next="position" />
     </Slide>
