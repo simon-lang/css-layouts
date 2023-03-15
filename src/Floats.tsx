@@ -10,8 +10,9 @@ export const Floats = () => (
   <Slide id="floats">
     <Heading>Floats</Heading>
 
-    <Box style={{ float: 'right' }} />
-    <p className="p-4 w-full">
+    <Box n={1} className="w-24 h-24" style={{ float: 'none' }} />
+
+    <p className="p-4">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit sed iste inventore, quam ullam cumque incidunt
       error placeat aperiam eius culpa iure nulla reprehenderit quos natus facilis dolores esse? Laboriosam? Lorem ipsum
       dolor sit amet consectetur, adipisicing elit. Velit sed iste inventore, quam ullam cumque incidunt error placeat

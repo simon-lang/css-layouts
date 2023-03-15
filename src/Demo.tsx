@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { range } from 'lodash'
 import { Actions } from './Actions'
+import { Nav } from './Nav'
 import { useDemoStore } from './store'
 
 export const Thumbnail = () => <div className="bg-darkblue h-24 cursor-pointer hover:bg-opacity-50"></div>
@@ -8,10 +9,11 @@ export const Thumbnail = () => <div className="bg-darkblue h-24 cursor-pointer h
 export function Demo() {
   const { sidebarOpen } = useDemoStore()
   return (
-    <div id="demo" className="h-screen bg-darkblue text-lg flex">
+    <div id="demo" className="h-screen bg-darkblue text-lg flex relative">
       {sidebarOpen && <Sidebar />}
       <SidebarHandle />
       <Workspace />
+      <Nav prev="grid" next="dm" />
     </div>
   )
 }

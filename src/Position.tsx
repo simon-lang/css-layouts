@@ -10,15 +10,8 @@ import { Slide } from './Slide'
 export const Position = () => (
   <Slide id="position">
     <Heading>Position</Heading>
-    <div>
-      <Box
-        n={1}
-        style={{
-          position: 'absolute',
-          width: '200px',
-          height: '200px'
-        }}
-      />
+    <div className="">
+      <Box n={1} />
     </div>
     <Nav prev="intro" next="floats" />
   </Slide>

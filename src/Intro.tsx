@@ -7,13 +7,12 @@ import {
   HeartIcon,
   HandThumbDownIcon,
   StarIcon,
-  HandRaisedIcon,
   UsersIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/solid'
 
 export const Box = ({ children }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className="flex m-4 text-2xl">{children}</div>
+  <div className="flex m-4 p-4 text-3xl">{children}</div>
 )
 
 export function Intro() {

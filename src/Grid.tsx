@@ -9,7 +9,7 @@ import { Slide } from './Slide'
 export const Grid = () => (
   <Slide id="grid">
     <Heading>Grid</Heading>
-    <div className="grid grid-cols-5 gap-2">
+    <div className="">
       <Box n={1} />
       <Box n={2} />
       <Box n={3} />

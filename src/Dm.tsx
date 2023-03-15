@@ -19,7 +19,7 @@ export function Dm() {
 const Workspace = () => {
   const { count } = useDemoStore()
   return (
-    <div className="bg-pink-500 h-screen">
+    <div className="h-screen">
       <Actions></Actions>
       <div className="">
         {range(count).map((n) => {
