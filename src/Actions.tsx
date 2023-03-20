@@ -10,7 +10,7 @@ import {
 import { useDemoStore } from './store'
 
 const Button = ({ children, onClick }: React.HTMLAttributes<HTMLButtonElement>) => (
-  <button onClick={onClick} className="flex flex-col w-16 items-center cursor-pointer hover:opacity-80">
+  <button onClick={onClick} className="flex flex-col w-10 items-center cursor-pointer hover:opacity-80">
     {children}
   </button>
 )

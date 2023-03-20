@@ -1,7 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { range } from 'lodash'
 import { Actions } from './Actions'
-import { Nav } from './Nav'
 import { useDemoStore } from './store'
 
 export function Demo() {
@@ -11,7 +10,6 @@ export function Demo() {
       {sidebarOpen && <Sidebar />}
       <SidebarHandle />
       <Workspace />
-      <Nav prev="grid" next="dm" />
     </div>
   )
 }

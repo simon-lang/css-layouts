@@ -8,7 +8,7 @@ export const Position = () => (
     <Heading>Position</Heading>
 
     <div className="">
-      <Box n={1} className="w-32 h-32" />
+      <Box n={1} className="w-36 h-36" />
     </div>
 
     <Nav prev="intro" next="floats" />
