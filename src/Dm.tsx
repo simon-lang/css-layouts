@@ -6,7 +6,7 @@ import { useDemoStore } from './store'
 export function Dm() {
   const { sidebarOpen } = useDemoStore()
   return (
-    <div id="dm" className="h-screen bg-darkblue text-lg">
+    <div id="dm" className="h-screen bg-black">
       {sidebarOpen && <Sidebar />}
       <SidebarHandle />
       <Workspace />
@@ -34,12 +34,12 @@ const SidebarHandle = () => {
 }
 
 const SidebarHeader = () => (
-  <div className="">
-    <div className="">
+  <div className="flex">
+    <div className="items-center h-full self-center">
       <ChevronLeftIcon className="w-5" />
     </div>
     <div>
-      <div>Patient Name</div>
+      <div className="text-2xl">Patient Name</div>
       <div className="">Patient ID | 14/06/1990 | MALE</div>
     </div>
     <div className=""></div>
@@ -104,7 +104,7 @@ const WorkspaceItem = ({ src }: { src: string }) => {
 }
 
 const Button = (props: React.HTMLAttributes<HTMLDivElement>) => (
-  <button className="py-2 px-4 border border-slate-200 rounded hover:opacity-80">{props.children}</button>
+  <button className="py-1 px-1 border border-slate-200 rounded hover:opacity-80">{props.children}</button>
 )
 
 const Badge = (props: React.HTMLAttributes<HTMLDivElement>) => <div className="">{props.children}</div>

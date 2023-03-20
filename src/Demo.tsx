@@ -4,8 +4,6 @@ import { Actions } from './Actions'
 import { Nav } from './Nav'
 import { useDemoStore } from './store'
 
-export const Thumbnail = () => <div className="bg-darkblue h-24 cursor-pointer hover:bg-opacity-50"></div>
-
 export function Demo() {
   const { sidebarOpen } = useDemoStore()
   return (
@@ -14,31 +12,6 @@ export function Demo() {
       <SidebarHandle />
       <Workspace />
       <Nav prev="grid" next="dm" />
-    </div>
-  )
-}
-
-const Workspace = () => {
-  const { count } = useDemoStore()
-  return (
-    <div className="h-screen grow overflow-hidden xopacity-0">
-      <Actions></Actions>
-      <div className="grid grid-cols-2 gap-4">
-        {range(count).map((n) => {
-          const src = n % 2 === 0 ? 'eye.jpg' : 'eye2.jpg'
-          return <WorkspaceItem src={src} />
-        })}
-      </div>
-    </div>
-  )
-}
-
-const WorkspaceItem = ({ src }: { src: string }) => {
-  const { decrement, rotate, flip } = useDemoStore()
-  return (
-    <div className="bg-black h-full w-full relative overflow-hidden flex justify-center">
-      <XMarkIcon className="w-8 cursor-pointer absolute top-2 right-2" onClick={decrement} />
-      <img src={src} className={`${flip && '-scale-x-100'} ${rotate && 'rotate-90'}`} />
     </div>
   )
 }
@@ -107,6 +80,31 @@ const Encounter = () => {
   )
 }
 
+const Workspace = () => {
+  const { count } = useDemoStore()
+  return (
+    <div className="h-screen grow overflow-hidden xopacity-0">
+      <Actions></Actions>
+      <div className="grid grid-cols-2 gap-4">
+        {range(count).map((n) => {
+          const src = n % 2 === 0 ? 'eye.jpg' : 'eye2.jpg'
+          return <WorkspaceItem src={src} />
+        })}
+      </div>
+    </div>
+  )
+}
+
+const WorkspaceItem = ({ src }: { src: string }) => {
+  const { decrement, rotate, flip } = useDemoStore()
+  return (
+    <div className="bg-black h-full w-full relative overflow-hidden flex justify-center">
+      <XMarkIcon className="w-8 cursor-pointer absolute top-2 right-2" onClick={decrement} />
+      <img src={src} className={`${flip && '-scale-x-100'} ${rotate && 'rotate-90'}`} />
+    </div>
+  )
+}
+
 const Button = (props: React.HTMLAttributes<HTMLDivElement>) => (
   <button className="py-2 px-4 border border-slate-200 rounded hover:opacity-80">{props.children}</button>
 )
@@ -114,3 +112,5 @@ const Button = (props: React.HTMLAttributes<HTMLDivElement>) => (
 const Badge = (props: React.HTMLAttributes<HTMLDivElement>) => (
   <div className="py-1 px-2 text-sm bg-slate-700 rounded">{props.children}</div>
 )
+
+export const Thumbnail = () => <div className="bg-darkblue h-24 cursor-pointer hover:bg-opacity-50"></div>
