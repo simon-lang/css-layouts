@@ -3,8 +3,6 @@ import { range } from 'lodash'
 import { Actions } from './Actions'
 import { useDemoStore } from './store'
 
-export const Thumbnail = () => <div className=""></div>
-
 export function Dm() {
   const { sidebarOpen } = useDemoStore()
   return (
@@ -12,31 +10,6 @@ export function Dm() {
       {sidebarOpen && <Sidebar />}
       <SidebarHandle />
       <Workspace />
-    </div>
-  )
-}
-
-const Workspace = () => {
-  const { count } = useDemoStore()
-  return (
-    <div className="h-screen">
-      <Actions></Actions>
-      <div className="">
-        {range(count).map((n) => {
-          const src = n % 2 === 0 ? 'eye.jpg' : 'eye2.jpg'
-          return <WorkspaceItem src={src} />
-        })}
-      </div>
-    </div>
-  )
-}
-
-const WorkspaceItem = ({ src }: { src: string }) => {
-  const { decrement, rotate, flip } = useDemoStore()
-  return (
-    <div className="w-36">
-      <XMarkIcon className="w-12" onClick={decrement} />
-      <img src={src} className={`${flip && '-scale-x-100'} ${rotate && 'rotate-90'}`} />
     </div>
   )
 }
@@ -105,8 +78,35 @@ const Encounter = () => {
   )
 }
 
+const Workspace = () => {
+  const { count } = useDemoStore()
+  return (
+    <div className="h-screen">
+      <Actions></Actions>
+      <div className="">
+        {range(count).map((n) => {
+          const src = n % 2 === 0 ? 'eye.jpg' : 'eye2.jpg'
+          return <WorkspaceItem src={src} />
+        })}
+      </div>
+    </div>
+  )
+}
+
+const WorkspaceItem = ({ src }: { src: string }) => {
+  const { decrement, rotate, flip } = useDemoStore()
+  return (
+    <div className="w-36">
+      <XMarkIcon className="w-12" onClick={decrement} />
+      <img src={src} className={`${flip && '-scale-x-100'} ${rotate && 'rotate-90'}`} />
+    </div>
+  )
+}
+
 const Button = (props: React.HTMLAttributes<HTMLDivElement>) => (
   <button className="py-2 px-4 border border-slate-200 rounded hover:opacity-80">{props.children}</button>
 )
 
 const Badge = (props: React.HTMLAttributes<HTMLDivElement>) => <div className="">{props.children}</div>
+
+export const Thumbnail = () => <div className=""></div>
