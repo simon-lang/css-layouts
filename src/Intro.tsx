@@ -25,7 +25,9 @@ export function Intro() {
       </Box>
       <Box>
         <StarIcon className="basis-9 mr-5" />
-        Make our products shinier
+        <div className="hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-pink-500 to-amber-400">
+          Make our products shiny!
+        </div>
       </Box>
       <Box>
         <HeartIcon className="basis-9 mr-5" />
